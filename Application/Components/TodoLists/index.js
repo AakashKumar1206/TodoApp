@@ -1,25 +1,14 @@
 import React, { Component } from 'react'
 import { Text, View, FlatList } from 'react-native'
+import InputItems from './InputItem'
 
 export default class TodoLists extends Component {
     constructor(props){
         super(props);
 
             this.state={
-                listdata:[
-                    {
-                        mainkey:1,
-                        todoitem:'Take Loan'
-                    },
-                    {
-                        mainkey:2,
-                        todoitem:'talk to kamlesh'
-                    },
-                    {
-                        mainkey:3,
-                        todoitem:'check RTGS status'
-                    }
-                ]
+                listdata:[],
+                inputtodo:''
         }
     }
   render() {
@@ -28,11 +17,11 @@ export default class TodoLists extends Component {
         <Text>Working!!</Text>
         <FlatList 
             data={this.state.listdata}
-            renderItem={({item})=><Text> {item.todoitem} </Text> }
+            renderItem={({item})=><Text> {item.todoitem}  </Text> }
             keyExtractor={item=>{item.mainkey}}
         />
 
-        
+        <InputItems  placeHolder='Enter Task'/>
       </View>
     )
   }
