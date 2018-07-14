@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View,TextInput,StyleSheet,TouchableOpacity } from 'react-native';
+import { View,StyleSheet,TouchableOpacity,Text } from 'react-native';
 // import styles from './styles'
 
 export default class TodoItems extends Component {
@@ -9,7 +9,7 @@ export default class TodoItems extends Component {
                 <Text style={styles.todoText}>{this.props.val.date}</Text>
                 <Text style={styles.todoText}>{this.props.val.note}</Text>
                 <TouchableOpacity onPress={this.props.deleteMethod} style={styles.noteDelete}>
-                    <Text style={styles.noteDeleteText}>D</Text>
+                    <Text style={styles.noteDeleteText}>Del</Text>
                 </TouchableOpacity>
             </View>
         );

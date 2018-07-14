@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, TextInput,ScrollView, TouchableOpacity } from 'react-native'
+import { Text, View, StyleSheet, TextInput,ScrollView, TouchableOpacity,SafeAreaView } from 'react-native'
 import TodoItems from './TodoItems'
 
 export default class TodoLists extends Component {
@@ -16,6 +16,7 @@ export default class TodoLists extends Component {
                     deleteMethod={()=>this.deleteTodo(key)}/>
         });
     return (
+        <SafeAreaView>
       <View style={styles.container}>
           <View style={styles.header}>
               <Text style={styles.headerText}>- Todo Tasks -</Text>
@@ -37,6 +38,7 @@ export default class TodoLists extends Component {
               <Text style={styles.addButtonText}>+</Text>
           </TouchableOpacity>
       </View>
+      </SafeAreaView>
     )
   }
 
@@ -99,7 +101,7 @@ const styles = StyleSheet.create({
       zIndex: 11,
       right: 20,
       bottom: 90,
-      backgroundColor: '#E91E63',
+      backgroundColor: 'rgb(45,59,174)',
       width: 70,
       height: 70,
       borderRadius: 35,
